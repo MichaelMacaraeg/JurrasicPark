@@ -17,7 +17,7 @@ namespace JurrasicPark.Repository
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-            => options.UseSqlite(@"Data Source = C:\temp\JurrassicParkDB.db");
+            => options.UseSqlite(@"Data Source = JurrassicParkDB.db"); // For both mac and windows.
 
 
         public DbSet<Cage> Cage { get; set; }
