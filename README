@@ -1,1 +1,17 @@
-initial Commit 
+JurrasicPark
+
+Available API's 
+
+Cage:
+GetAllCages
+GetCagesByID
+GetCageCapacity
+CreateCage
+EditCagePower
+
+Dinosaur:
+GetAllDinosaurs
+GetDinosaursById
+MoveDinosaur
+CreateDinosaur
+GetListDinosaursCagedById
