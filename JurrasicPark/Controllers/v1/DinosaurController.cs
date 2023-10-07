@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace JurrasicPark.Controllers.v1
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [Produces("application/json")]
     public class DinosaurController : ControllerBase
     {
@@ -46,7 +46,7 @@ namespace JurrasicPark.Controllers.v1
         public ActionResult CreateDinosaur(CreateDinosaur createDinosaur)
         {
             var createdDinosaur = _dinosaurService.CreateDinosaur(createDinosaur);
-            return Ok();
+            return Ok(createdDinosaur);
         }
         [HttpGet]
         [Route("GetListDinosaursCagedById")]

@@ -10,7 +10,7 @@ using Microsoft.Extensions.Logging;
 namespace JurrasicPark.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [Produces("application/json")]
     public class CageController : ControllerBase
     {

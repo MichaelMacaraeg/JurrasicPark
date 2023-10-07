@@ -60,32 +60,41 @@ namespace JurrasicPark.Services
             var dinoList = _jurrasicParkDBContext.Dinosaur.Where(x => x.CageId == cageId).ToList();
             var editedDinosaur = _jurrasicParkDBContext.Dinosaur.Where(x => x.Id == dinosaurId).FirstOrDefault();
 
+            var isCarnivor = dinoList.Find(item => item.FoodTypeId == 1); //Is Herbivor
+            var type = dinoList.All(item => item.SpeciesTypeId == editedDinosaur.SpeciesTypeId); //Not all same Species
+
             //Check is power on.
             if (cage.IsPowered == false)
             {
-               return RulesStatusCodes.CagePoweredDown;
+                return RulesStatusCodes.CagePoweredDown;
             }
 
-
-            //Check is Cage Full
-            if(cage.MaxCapacity< dinoList.Count)
+            //Cage is empty skip process
+            if (dinoList.Count > 0)
             {
-                return RulesStatusCodes.MaxCapacity;
-            }
+                //Check is Cage Full
+                if (cage.MaxCapacity < dinoList.Count)
+                {
+                    return RulesStatusCodes.MaxCapacity;
+                }
 
+                //Herbivor but there is a carnivor in cage.
+                if (isCarnivor != null && editedDinosaur.FoodTypeId == 2)
+                {
+                    return RulesStatusCodes.CageDangerous;
+                }
 
-            //search for carnivor and type
-            var carnivor = dinoList.Find(item => item.FoodTypeId == 1); //Is Carnivor
-            var type = dinoList.All(item => item.SpeciesTypeId == editedDinosaur.SpeciesTypeId); //Not all same Species
-            if (carnivor != null && type == false) 
-            {
-                return RulesStatusCodes.CageDangerous;
-            }
+                //Carnivore but no same species.
+                if (isCarnivor != null && type == false)
+                {
+                    return RulesStatusCodes.CageDangerous;
+                }
 
-            //check if dinosaur found.
-            if(editedDinosaur == null)
-            {
-                return RulesStatusCodes.DinosaurNotFound;
+                //check if dinosaur found.
+                if (editedDinosaur == null)
+                {
+                    return RulesStatusCodes.DinosaurNotFound;
+                }
             }
 
             //Update Dinosaur
