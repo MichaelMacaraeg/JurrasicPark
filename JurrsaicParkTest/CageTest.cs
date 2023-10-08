@@ -87,7 +87,7 @@ namespace JurrsaicParkTest
             var service = new CageService(repo);
             var result = service.UpdateCagePower(cageId, isPowered);
             //Assert
-            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Value);
 
         }
 
@@ -103,7 +103,7 @@ namespace JurrsaicParkTest
             var service = new CageService(repo);
             var result = service.UpdateCagePower(cageId, isPowered);
             //Assert
-            Assert.IsNull(result);
+            Assert.IsNull(result.Value);
 
         }
     }

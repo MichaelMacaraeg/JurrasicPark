@@ -49,7 +49,7 @@ namespace JurrsaicParkTest
             var service = new DinosaurService(repo);
             var result = service.MoveDinosaur(dinosaurId,cageId);
             //Assert
-            Assert.IsNotNull(result);
+            Assert.IsNotNull(result.Value);
         }
 
         [TestMethod]
@@ -64,7 +64,7 @@ namespace JurrsaicParkTest
             var service = new DinosaurService(repo);
             var result = service.MoveDinosaur(dinosaurId, cageId);
             //Assert
-            Assert.IsNull(result);
+            Assert.IsNull(result.Value);
         }
 
         [TestMethod]

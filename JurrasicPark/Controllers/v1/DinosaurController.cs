@@ -1,4 +1,5 @@
-﻿using JurrasicPark.Models.RequestModel;
+﻿using JurrasicPark.Models.POCO.ResponseModel;
+using JurrasicPark.Models.RequestModel;
 using JurrasicPark.Services;
 using JurrasicPark.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -36,7 +37,7 @@ namespace JurrasicPark.Controllers.v1
         }
         [HttpPut]
         [Route("MoveDinosaur")]
-        public ActionResult MoveDinosaur(int dinosaurId, int cageId)
+        public ActionResult<ResponseDinosaur> MoveDinosaur(int dinosaurId, int cageId)
         {
             var movedDinosaur = _dinosaurService.MoveDinosaur(dinosaurId, cageId);
             return Ok(movedDinosaur);

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using JurrasicPark.Models;
 using JurrasicPark.Models.RequestModel;
 using JurrasicPark.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
@@ -49,7 +50,7 @@ namespace JurrasicPark.Controllers
         }
         [HttpPut]
         [Route("EditCagePower")]
-        public ActionResult EditCagePower(int cageId, bool isPowered)
+        public ActionResult<Cage> EditCagePower(int cageId, bool isPowered)
         {
             var cage = _cageService.UpdateCagePower(cageId, isPowered);
             return Ok(cage);

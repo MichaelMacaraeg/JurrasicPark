@@ -75,7 +75,7 @@ namespace JurrasicPark.Services
             _jurrasicParkDBContext.SaveChanges();
 
 
-            return new OkResult(); 
+            return cage; 
         }
 
         public Cage UpdateCage(Cage updatedDetail)
