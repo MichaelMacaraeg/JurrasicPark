@@ -1,17 +1,64 @@
 JurrasicPark
 
-Available API's 
+Avaliable API's for Postman
+using https://localhost:5001/
+/api/v1/Cage/GetAllCages
+/api/v1/Cage/GetCageById
+/api/v1/Cage/GetCageCapacity
+/api/v1/Cage/CreateCage
+/api/v1/Cage/EditCagePower
+/api/v1/Dinosaur/GetAllDinosaurs
+/api/v1/Dinosaur/GetDinosaursById
+/api/v1/Dinosaur/MoveDinosaur
+/api/v1/Dinosaur/CreateDinosaur
+/api/v1/Dinosaur/GetListDinosaursCagedById
 
-Cage:
-GetAllCages
-GetCagesByID
-GetCageCapacity
-CreateCage
-EditCagePower
+Swagger
+https://localhost:5001/swagger/index.html
 
-Dinosaur:
-GetAllDinosaurs
-GetDinosaursById
-MoveDinosaur
-CreateDinosaur
-GetListDinosaursCagedById
+Json 
+CreateCage{
+isPowered	boolean
+maxCapacity	integer($int32)
+}
+
+Cage{
+id	integer($int32)
+isPowered	boolean
+maxCapacity	integer($int32)
+}
+
+ResponseDinosaur{
+id	integer($int32)
+name	string
+nullable: true
+speciesTypeDescription	string
+nullable: true
+foodTypeDescription	string
+nullable: true
+cageId	integer($int32)
+}
+
+CreateDinosaur{
+name	string
+nullable: true
+speciesTypeId	integer($int32)
+foodTypeId	integer($int32)
+cageId	integer($int32)
+}
+
+Database commands used.
+Add-Migration InitialCreate
+update-database
+
+Packages Used
+Sqlite
+Tools
+Swashbuckle
+
+Things to do better
+Use Redis Cache instead of calling the database so many times.
+Use Fluent Validation. I Wrote custom validation but fluent has more options.
+Maybe added a login or authentication/scope to access api's
+
+
