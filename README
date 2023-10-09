@@ -62,3 +62,20 @@ Use Fluent Validation. I Wrote custom validation but fluent has more options.
 Maybe added a login or authentication/scope to access api's
 
 
+1 Thing
+I could have created a relationship to Species Type and Food. So when creating a Dinosaur a user could not make a Trex a herbivore.
+I could have made species have food type. 
+
+Species Class
+public int id { get; set; }
+public string SpeciesTypeName { get; set; }
+public int foodtypeId {get;set;}
+
+OnCreate
+Validate by 
+Saying if Tyrannosaurus is chosen for id then it auto picks foodId.
+
+
+Further that is one enhancement I did want to make. But was worried, about what happens if you wanted to create a new species? Or Add a new Foodtype. then tieing all of that back together. (I would just spin my wheels. lol) 
+
+
