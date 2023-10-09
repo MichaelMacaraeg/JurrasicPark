@@ -38,10 +38,10 @@ namespace JurrasicPark.Services
             Dinosaur dinosaur = new Dinosaur();
             dinosaur.CageId = createdDinosaur.CageId;
             dinosaur.Name = createdDinosaur.Name;
-            dinosaur.FoodTypeId = createdDinosaur.SpeciesTypeId;
-            dinosaur.Id = createdDinosaur.FoodTypeId;
+            dinosaur.SpeciesTypeId = createdDinosaur.SpeciesTypeId;
+            dinosaur.FoodTypeId = createdDinosaur.FoodTypeId;
 
-            _jurrasicParkDBContext.Set<Dinosaur>().Add(dinosaur);
+            _jurrasicParkDBContext.Add(dinosaur);
             _jurrasicParkDBContext.SaveChanges();
 
             //return dinosaur with description.

@@ -80,6 +80,20 @@ namespace JurrsaicParkTest
         {
             //Updates Cage to power on 
             //Arrange
+            var cageId = 6;
+            bool isPowered = true;
+            //Act
+            var repo = new JurrasicParkDbContext();
+            var service = new CageService(repo);
+            var result = service.UpdateCagePower(cageId, isPowered);
+            //Assert
+            Assert.IsNotNull(result.Value);
+        }
+
+        public void EditCagePowerOnAlready_ReturnCage()
+        {
+            //Updates Cage to power on 
+            //Arrange
             var cageId = 5;
             bool isPowered = true;
             //Act
@@ -92,7 +106,7 @@ namespace JurrsaicParkTest
         }
 
 
-        [TestMethod]
+            [TestMethod]
         public void EditCagePoweroff_ReturnCage()
         {
             //Dinosaur in cage and not able to turn off.

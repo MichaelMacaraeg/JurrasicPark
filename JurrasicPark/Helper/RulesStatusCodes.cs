@@ -18,5 +18,7 @@ namespace JurrasicPark.Helper
         { StatusCode = 500 };
         public static ActionResult DinosaurNotFound => new ObjectResult(new { Error = "Dinosaur not found." })
         { StatusCode = 500 };
+        public static ActionResult CagePowerOn => new ObjectResult(new { Error = "Power is already on." })
+        { StatusCode = 200 };
     }
 }
