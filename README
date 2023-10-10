@@ -6,10 +6,10 @@ using https://localhost:5001/
 /api/v1/Cage/GetCageById?cageId={1}:Get
 /api/v1/Cage/GetCageCapacity?cageId={1}:Get
 /api/v1/Cage/CreateCage  CreateCage:Post
-/api/v1/Cage/EditCagePower?cageId={1}&isPowered{2}:Get
+/api/v1/Cage/EditCagePower?cageId={1}&isPowered{2}:Put
 /api/v1/Dinosaur/GetAllDinosaurs:Get
 /api/v1/Dinosaur/GetDinosaursById?dinosaurId={1}:Get
-/api/v1/Dinosaur/MoveDinosaur?dinosaurId={1}&cageId={2}:Get
+/api/v1/Dinosaur/MoveDinosaur?dinosaurId={1}&cageId={2}:Put
 /api/v1/Dinosaur/CreateDinosaur CreateDinosaur:Post
 /api/v1/Dinosaur/GetListDinosaursCagedById?cageId={1}:Get
 
