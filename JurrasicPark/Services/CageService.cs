@@ -64,7 +64,7 @@ namespace JurrasicPark.Services
             var dinoList = _jurrasicParkDBContext.Dinosaur.Where(x => x.CageId == cageId).ToList();
             var cage = _jurrasicParkDBContext.Cage.Where(x => x.Id == cageId).FirstOrDefault();
            
-            if(cage.IsPowered == true)
+            if(cage.IsPowered == true && isOn == true)
             {
                 return RulesStatusCodes.CagePowerOn;
             }
