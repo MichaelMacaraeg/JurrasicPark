@@ -2,16 +2,16 @@ JurrasicPark
 
 Avaliable API's for Postman
 using https://localhost:5001/
-/api/v1/Cage/GetAllCages
-/api/v1/Cage/GetCageById
-/api/v1/Cage/GetCageCapacity
-/api/v1/Cage/CreateCage
-/api/v1/Cage/EditCagePower
-/api/v1/Dinosaur/GetAllDinosaurs
-/api/v1/Dinosaur/GetDinosaursById
-/api/v1/Dinosaur/MoveDinosaur
-/api/v1/Dinosaur/CreateDinosaur
-/api/v1/Dinosaur/GetListDinosaursCagedById
+/api/v1/Cage/GetAllCages:Get
+/api/v1/Cage/GetCageById?cageId={1}:Get
+/api/v1/Cage/GetCageCapacity?cageId={1}:Get
+/api/v1/Cage/CreateCage  CreateCage:Post
+/api/v1/Cage/EditCagePower?cageId={1}&isPowered{2}:Get
+/api/v1/Dinosaur/GetAllDinosaurs:Get
+/api/v1/Dinosaur/GetDinosaursById?dinosaurId={1}:Get
+/api/v1/Dinosaur/MoveDinosaur?dinosaurId={1}&cageId={2}:Get
+/api/v1/Dinosaur/CreateDinosaur CreateDinosaur:Post
+/api/v1/Dinosaur/GetListDinosaursCagedById?cageId={1}:Get
 
 Swagger
 https://localhost:5001/swagger/index.html
